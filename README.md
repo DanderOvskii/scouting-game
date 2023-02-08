@@ -1,2 +1,2 @@
 # scouting-game
- dit is een game voor scouting waar popetje vechten
+ dit is een game voor scouting waar popetje vechten + joe biden
