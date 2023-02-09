@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HP : MonoBehaviour
+public class HP2 : MonoBehaviour
 {
 
     public int maxHeath = 100;
-    int currentHealth;
+    private int currentHealth;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHeath;
     }
 
-   public void Damage(int damage)
+    public void Damage2(int damage2)
     {
-        currentHealth -= damage;
+        currentHealth -= damage2;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -25,6 +25,7 @@ public class HP : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("enemy dood");
+        Debug.Log("ja die is dood");
+        this.enabled = false;
     }
 }

@@ -9,17 +9,24 @@ public class playercombat : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask playerLayers;
-    public int attackDamage = 40;
+    public int attackDamage2 = 40;
+    public float attacrate = 2f;
+    float nextattack = 0f;
          
 
  
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if(Time.time >= nextattack)
         {
-            Attack();
+         if (Input.GetKeyDown(KeyCode.F))
+            {
+                Attack();
+                nextattack = Time.time + 1f / attacrate;
+            }
         }
+       
     }
 
     void Attack()
@@ -29,7 +36,7 @@ public class playercombat : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<HP>().Damage(attackDamage);
+            enemy.GetComponent<HP2>().Damage2(attackDamage2);
         }
     }
     void OnDrawGizmosSelected()
