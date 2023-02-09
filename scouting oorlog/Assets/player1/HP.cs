@@ -25,7 +25,7 @@ public class HP : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("ja die is dood");
+        Debug.Log("player1 dood");
         this.enabled = false;
     }
 }

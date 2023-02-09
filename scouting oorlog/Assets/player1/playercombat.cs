@@ -12,6 +12,7 @@ public class playercombat : MonoBehaviour
     public int attackDamage2 = 40;
     public float attacrate = 2f;
     float nextattack = 0f;
+
          
 
  
@@ -32,11 +33,11 @@ public class playercombat : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("atack");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
+        Collider2D[] hitEnemies2 = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
 
-        foreach(Collider2D enemy in hitEnemies)
+        foreach(Collider2D enemy2 in hitEnemies2)
         {
-            enemy.GetComponent<HP2>().Damage2(attackDamage2);
+            enemy2.GetComponent<HP2>().Damage2(attackDamage2);
         }
     }
     void OnDrawGizmosSelected()

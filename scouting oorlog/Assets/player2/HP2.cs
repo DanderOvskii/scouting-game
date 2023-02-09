@@ -6,18 +6,18 @@ public class HP2 : MonoBehaviour
 {
 
     public int maxHeath = 100;
-    private int currentHealth;
+    private int currentHealth2;
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHeath;
+        currentHealth2 = maxHeath;
     }
 
     public void Damage2(int damage2)
     {
-        currentHealth -= damage2;
+        currentHealth2 -= damage2;
 
-        if (currentHealth <= 0)
+        if (currentHealth2 <= 0)
         {
             Die();
         }
@@ -25,7 +25,7 @@ public class HP2 : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("ja die is dood");
+        Debug.Log("player2 dood");
         this.enabled = false;
     }
 }

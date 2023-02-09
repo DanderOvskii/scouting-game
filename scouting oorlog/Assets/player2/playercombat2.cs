@@ -11,6 +11,7 @@ public class playercombat2 : MonoBehaviour
     public int attackDamage = 40;
     public float attacrate = 2f;
     float nextattack = 0f;
+    
 
 
 
@@ -37,6 +38,7 @@ public class playercombat2 : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<HP>().Damage(attackDamage);
+            
         }
     }
     void OnDrawGizmosSelected()

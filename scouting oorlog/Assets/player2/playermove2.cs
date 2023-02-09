@@ -41,7 +41,7 @@ public class playermove2 : MonoBehaviour
             crouch = false;
         }
 
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             rigidBody.gravityScale = 10;
         }
