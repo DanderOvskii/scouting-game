@@ -12,9 +12,12 @@ public class playermovement : MonoBehaviour
     
    public bool jump = false;
     bool crouch = false;
+    public bool doublejumpe;
+
     
-   
-   
+
+
+
 
     float horizontalMove = 0f;
     // Update is called once per frame
@@ -50,7 +53,8 @@ public class playermovement : MonoBehaviour
         animator.SetBool("IsJumping", false);
         rigidBody.gravityScale = 3;
         jump = false;
-        
+       
+        Debug.Log("boeia");
     }
 
     public void Oncrouchung (bool ischouching)

@@ -12,6 +12,8 @@ public class playermove2 : MonoBehaviour
 
     public bool jump = false;
     bool crouch = false;
+    
+
 
 
 
@@ -27,9 +29,12 @@ public class playermove2 : MonoBehaviour
         if (Input.GetButtonDown("arrowup"))
         {
             jump = true;
+            
             animator.SetBool("IsJumping", true);
 
         }
+
+
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
@@ -48,15 +53,16 @@ public class playermove2 : MonoBehaviour
 
     }
 
-    public void OnLanding()
+    public void OnLanding2()
     {
         animator.SetBool("IsJumping", false);
         rigidBody.gravityScale = 3;
         jump = false;
+        
 
     }
 
-    public void Oncrouchung(bool ischouching)
+    public void Oncrouchung2(bool ischouching)
 
     {
         animator.SetBool("iscrouching", ischouching);

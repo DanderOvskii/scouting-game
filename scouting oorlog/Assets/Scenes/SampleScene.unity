@@ -728,7 +728,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838906762
 GameObject:
@@ -775,9 +775,9 @@ GameObject:
   - component: {fileID: 890837702}
   - component: {fileID: 890837700}
   - component: {fileID: 890837707}
-  - component: {fileID: 890837706}
-  - component: {fileID: 890837705}
+  - component: {fileID: 890837710}
   - component: {fileID: 890837708}
+  - component: {fileID: 890837709}
   m_Layer: 0
   m_Name: dax1
   m_TagString: Player
@@ -872,8 +872,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890837696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9807, y: 3.6505, z: 0}
-  m_LocalScale: {x: 1.0786, y: 2.101, z: 1}
+  m_LocalPosition: {x: -6.35, y: 2.42, z: 0}
+  m_LocalScale: {x: 1, y: 2.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2082951496}
@@ -964,75 +964,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.24}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &890837705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890837696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278c98879a22d64aa1f15bfba3046ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controler: {fileID: 890837706}
-  animator: {fileID: 890837707}
-  rigidBody: {fileID: 890837697}
-  runSpeed: 40
-  jump: 0
---- !u!114 &890837706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890837696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482019ca665d5647be57cbafd371017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.133
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  m_GroundCheck: {fileID: 2082951496}
-  m_CeilingCheck: {fileID: 1821848248}
-  m_CrouchDisableCollider: {fileID: 890837700}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 890837705}
-        m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-        m_MethodName: OnLanding
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 890837705}
-        m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-        m_MethodName: Oncrouchung
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
 --- !u!95 &890837707
 Animator:
   serializedVersion: 5
@@ -1073,6 +1004,76 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage2: 40
   attacrate: 2
+--- !u!114 &890837709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3278c98879a22d64aa1f15bfba3046ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controler: {fileID: 890837710}
+  animator: {fileID: 890837707}
+  rigidBody: {fileID: 890837697}
+  runSpeed: 40
+  jump: 0
+  doublejumpe: 0
+--- !u!114 &890837710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e482019ca665d5647be57cbafd371017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 700
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.133
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  m_GroundCheck: {fileID: 2082951496}
+  m_CeilingCheck: {fileID: 1821848248}
+  m_CrouchDisableCollider: {fileID: 890837700}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 890837709}
+        m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
+        m_MethodName: OnLanding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 890837709}
+        m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
+        m_MethodName: Oncrouchung
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1144986806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144986819}
         m_TargetAssemblyTypeName: playermove2, Assembly-CSharp
-        m_MethodName: OnLanding
+        m_MethodName: OnLanding2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1239,7 +1240,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1144986819}
         m_TargetAssemblyTypeName: playermove2, Assembly-CSharp
-        m_MethodName: Oncrouchung
+        m_MethodName: Oncrouchung2
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1247,7 +1248,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!50 &1144986814
 Rigidbody2D:
@@ -1336,8 +1337,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144986806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.29, y: 3.6505, z: 0}
-  m_LocalScale: {x: 1.0786, y: 2.101, z: 1}
+  m_LocalPosition: {x: -2.15, y: 2.42, z: 0}
+  m_LocalScale: {x: 1, y: 2.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 838906763}
@@ -1345,7 +1346,7 @@ Transform:
   - {fileID: 433324895}
   - {fileID: 509261516}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1144986818
 MonoBehaviour:
@@ -1383,7 +1384,7 @@ MonoBehaviour:
   animator: {fileID: 1144986808}
   rigidBody: {fileID: 1144986814}
   runSpeed: 40
-  jump: 0
+  jump: 1
 --- !u!1 &1531211115
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1698,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1808840680
 MonoBehaviour:
