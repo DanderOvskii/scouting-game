@@ -23,6 +23,7 @@ public class BoomDamage : MonoBehaviour
         if (other.gameObject.tag == "player2")
         {
             Attack();
+            
         }
     }
 
@@ -31,7 +32,7 @@ public class BoomDamage : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("atack");
-        Collider2D[] hitEnemies2 = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayers);
+        Collider2D[] hitEnemies2 = Physics2D.OverlapBoxAll(attackPoint.position, transform.localScale * attackRange, 0, playerLayers);
 
         foreach (Collider2D enemy2 in hitEnemies2)
         {
@@ -44,6 +45,11 @@ public class BoomDamage : MonoBehaviour
         {
             return;
         }
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireCube(attackPoint.position, transform.localScale*attackRange);
+    }
+
+    void die()
+    {
+        Destroy(this);
     }
 }

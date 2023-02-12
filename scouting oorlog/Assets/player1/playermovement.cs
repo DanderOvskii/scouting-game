@@ -12,7 +12,7 @@ public class playermovement : MonoBehaviour
     
    public bool jump = false;
     bool crouch = false;
-    public bool doublejumpe;
+  
 
     
 

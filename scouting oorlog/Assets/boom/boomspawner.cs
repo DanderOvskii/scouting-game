@@ -7,6 +7,9 @@ public class boomspawner : MonoBehaviour
     public GameObject Boom;
     public float attacktime = 2f;
     float ready = 0f;
+    public Animator animator;
+    public playermovement move;
+
 
 
     // Start is called before the first frame update
@@ -18,9 +21,11 @@ public class boomspawner : MonoBehaviour
         if (Time.time >= ready)
         {
 
-if (Input.GetKey(KeyCode.Return))
+if (Input.GetKey(KeyCode.Return)&&move.jump==false)
         {
-            Spawn();
+
+                Invoke("Spawn", 1);
+                animator.SetTrigger("supperataack");
                 ready = Time.time + 1f / attacktime;
         }
         }
@@ -30,6 +35,7 @@ if (Input.GetKey(KeyCode.Return))
 
     void Spawn()
     {
-        Instantiate(Boom, transform.position, Quaternion.identity);
+        GameObject clone =  Instantiate(Boom, transform.position, Quaternion.identity);
+        Destroy(clone, 2.0f);
     }
 }
