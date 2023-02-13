@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 890837702}
   - component: {fileID: 890837700}
   - component: {fileID: 890837707}
+  - component: {fileID: 890837712}
   - component: {fileID: 890837710}
   - component: {fileID: 890837708}
   - component: {fileID: 890837711}
@@ -822,7 +823,7 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890837696}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -834,7 +835,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6210eb3cac80c469c865e9eb0c593de8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -874,7 +875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890837696}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.35, y: 3.22, z: 0}
+  m_LocalPosition: {x: -6.35, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1075,6 +1076,18 @@ MonoBehaviour:
   rigidBody: {fileID: 890837697}
   runSpeed: 40
   jump: 0
+--- !u!114 &890837712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d48ebd9d6414d7cae1e064a1dd8c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1144986806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,7 +1299,7 @@ SpriteRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144986806}
   m_Enabled: 1
-  m_CastShadows: 0
+  m_CastShadows: 1
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -1298,7 +1311,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6210eb3cac80c469c865e9eb0c593de8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1338,7 +1351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144986806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.15, y: 2.42, z: 0}
+  m_LocalPosition: {x: -2.15, y: 0.65, z: 0}
   m_LocalScale: {x: 1, y: 2.08, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1421,7 +1434,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1472,14 +1485,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1531211115}
-  m_LocalRotation: {x: 0.5043066, y: -0.20904419, z: 0.02513209, w: 0.8374628}
+  m_LocalRotation: {x: 0.34289518, y: -0.22252135, z: 0.018846959, w: 0.91244286}
   m_LocalPosition: {x: 16.37, y: -0.79, z: -6.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 58.78, y: -38.8, z: -19}
+  m_LocalEulerAnglesHint: {x: 39.356, y: -30.561, z: -8.794}
 --- !u!1 &1642718547
 GameObject:
   m_ObjectHideFlags: 0
