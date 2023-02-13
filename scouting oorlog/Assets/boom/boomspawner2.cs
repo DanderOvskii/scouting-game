@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boomspawner : MonoBehaviour
+public class boomspawner2 : MonoBehaviour
 {
     public GameObject Boom;
     public float attacktime = 2f;
     float ready = 0f;
     public Animator animator;
-    public playermovement move;
+    public playermove2 move;
 
 
 
@@ -21,7 +21,7 @@ public class boomspawner : MonoBehaviour
         if (Time.time >= ready)
         {
 
-if (Input.GetKey(KeyCode.E)&&move.jump==false)
+if (Input.GetKey(KeyCode.L)&&move.jump==false)
         {
 
                 Invoke("Spawn", 1);

@@ -9,7 +9,8 @@ public class BoomDamage : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask playerLayers;
-    public int attackDamageBoom = 200;
+    public int attackDamageBoom;
+    private bool attackExecuted = false;
 
 
 
@@ -20,8 +21,9 @@ public class BoomDamage : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("hit");
-        if (other.gameObject.tag == "player2")
+        if (other.gameObject.tag == "player2" && !attackExecuted)
         {
+            attackExecuted = true;
             Attack();
             
         }
@@ -36,8 +38,21 @@ public class BoomDamage : MonoBehaviour
 
         foreach (Collider2D enemy2 in hitEnemies2)
         {
-            enemy2.GetComponent<HP2>().Damage2(attackDamageBoom);
+            Debug.Log("ga spriggen ofzo");
+            HP2 hp2 = enemy2.GetComponent<HP2>();
+            if (hp2 != null)
+            {
+                hp2.Damage2(attackDamageBoom);
+            }
+            playermove2 pm2 = enemy2.GetComponent<playermove2>();
+            if (pm2 != null)
+            {
+                pm2.jump = true;
+            }
+
+
         }
+
     }
     void OnDrawGizmosSelected()
     {
