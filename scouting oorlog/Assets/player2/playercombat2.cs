@@ -20,7 +20,7 @@ public class playercombat2 : MonoBehaviour
     {
         if (Time.time >= nextattack)
         {
-            if (Input.GetKeyDown(KeyCode.RightControl))
+            if (Input.GetKeyDown(KeyCode.M))
             {
                 Attack();
                 nextattack = Time.time + 1f / attacrate;

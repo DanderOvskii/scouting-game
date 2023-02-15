@@ -262,7 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 186770160}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: groundchek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -751,7 +751,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629240244}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: cilingchek
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +782,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 817359600}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: AttackPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1179,8 +1179,8 @@ GameObject:
   - component: {fileID: 903613165}
   - component: {fileID: 903613164}
   m_Layer: 0
-  m_Name: dax2-0
-  m_TagString: Player
+  m_Name: dax2
+  m_TagString: player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1503,7 +1503,7 @@ GameObject:
   - component: {fileID: 1144986818}
   - component: {fileID: 1144986819}
   m_Layer: 7
-  m_Name: dax2
+  m_Name: dax20
   m_TagString: player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1807,7 +1807,7 @@ GameObject:
   - component: {fileID: 1360020369}
   - component: {fileID: 1360020371}
   - component: {fileID: 1360020370}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: hpdetect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1360020368}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9b9ba304796fa4da711b9f1e71fb71, type: 3}
+  m_Script: {fileID: 11500000, guid: 21aefd07a0e22fa459ae963d637f93a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHeath: 100
