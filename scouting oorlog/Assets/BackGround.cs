@@ -7,7 +7,7 @@ public class BackGround: MonoBehaviour
 
     public Transform[] backgrounds;
     public float[] parallaxScales;
-    public float smoot$$anonymous$$ng;
+    public float smoot;
  
  private Transform cam;
 
@@ -52,7 +52,7 @@ public class BackGround: MonoBehaviour
 
             Vector3 backgroundTargetPos = new Vector3(backgroundTargetPosX, backgrounds[i].position.y, backgrounds[i].position.z);
 
-            backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoot$$anonymous$$ng * Time.deltaTime);
+            backgrounds[i].position = Vector3.Lerp(backgrounds[i].position, backgroundTargetPos, smoot * Time.deltaTime);
 
 
         }
