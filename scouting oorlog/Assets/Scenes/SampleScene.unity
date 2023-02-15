@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 194941453}
   m_Layer: 6
   m_Name: hpdetect
-  m_TagString: Untagged
+  m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -853,9 +853,9 @@ GameObject:
   - component: {fileID: 890837710}
   - component: {fileID: 890837708}
   - component: {fileID: 890837711}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: dax1
-  m_TagString: Player
+  m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1178,7 +1178,7 @@ GameObject:
   - component: {fileID: 903613166}
   - component: {fileID: 903613165}
   - component: {fileID: 903613164}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: dax2
   m_TagString: player2
   m_Icon: {fileID: 0}
@@ -1809,7 +1809,7 @@ GameObject:
   - component: {fileID: 1360020370}
   m_Layer: 7
   m_Name: hpdetect
-  m_TagString: Untagged
+  m_TagString: player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2025,7 +2025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5922c94c3757e4b4f8c6a44ca74d94fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Boom: {fileID: 4492199301956469946, guid: 019f7a17d1a10dc4ba5ab30193d1cf8d, type: 3}
+  Boom: {fileID: 4492199301956469946, guid: daa42a5b98ebe4034b072b1d3bc44bab, type: 3}
   attacktime: 0.5
   animator: {fileID: 903613168}
   move: {fileID: 903613165}

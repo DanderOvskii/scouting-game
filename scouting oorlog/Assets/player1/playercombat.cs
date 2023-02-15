@@ -37,7 +37,11 @@ public class playercombat : MonoBehaviour
 
         foreach(Collider2D enemy2 in hitEnemies2)
         {
-            enemy2.GetComponent<HP2>().Damage2(attackDamage2);
+            HP2 hp2 = enemy2.GetComponent<HP2>();
+            if (hp2 != null)
+            {
+                hp2.Damage2(attackDamage2);
+            }
         }
     }
     void OnDrawGizmosSelected()

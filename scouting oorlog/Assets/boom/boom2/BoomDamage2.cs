@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BoomDamage : MonoBehaviour
+public class BoomDamage2 : MonoBehaviour
 {
 
     public Animator animator;
@@ -15,13 +15,14 @@ public class BoomDamage : MonoBehaviour
 
 
 
+
     // Update is called once per frame
 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("hit");
-        if (other.gameObject.tag == "player2" && !attackExecuted)
+        if (other.gameObject.tag == "player1" && !attackExecuted)
         {
             attackExecuted = true;
             Attack();
@@ -34,20 +35,20 @@ public class BoomDamage : MonoBehaviour
     void Attack()
     {
         animator.SetTrigger("atack");
-        Collider2D[] hitEnemies2 = Physics2D.OverlapBoxAll(attackPoint.position, transform.localScale * attackRange, 0, playerLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, transform.localScale * attackRange, 0, playerLayers);
 
-        foreach (Collider2D enemy2 in hitEnemies2)
+        foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("ga spriggen ofzo");
-            HP2 hp2 = enemy2.GetComponent<HP2>();
-            if (hp2 != null)
+            HP hp = enemy.GetComponent<HP>();
+            if (hp != null)
             {
-                hp2.Damage2(attackDamageBoom);
+                hp.Damage(attackDamageBoom);
             }
-            playermove2 pm2 = enemy2.GetComponent<playermove2>();
-            if (pm2 != null)
+            playermovement pm = enemy.GetComponent<playermovement>();
+            if (pm != null)
             {
-                pm2.jump = true;
+                pm.jump = true;
             }
 
 
