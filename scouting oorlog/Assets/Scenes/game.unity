@@ -718,11 +718,14 @@ MonoBehaviour:
   targets:
   - {fileID: 890837699}
   - {fileID: 903613173}
+  - {fileID: 1577839603}
   offset: {x: 0, y: 12, z: -50}
+  velocity: {x: 0, y: 0, z: 0}
   smoothtime: 2
   minZoom: 40
   maxZoom: 10
   zoomlimiter: 50
+  cam: {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -740,6 +743,8 @@ MonoBehaviour:
   parallaxScales:
   - 10
   smoot: 2
+  cam: {fileID: 0}
+  previousCamPos: {x: 0, y: 0, z: 0}
 --- !u!1 &617561186
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,13 +987,14 @@ GameObject:
   - component: {fileID: 890837710}
   - component: {fileID: 890837708}
   - component: {fileID: 890837711}
+  - component: {fileID: 890837713}
   m_Layer: 6
   m_Name: dax1
   m_TagString: player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &890837697
 Rigidbody2D:
   serializedVersion: 4
@@ -1085,6 +1091,7 @@ Transform:
   - {fileID: 1757648951}
   - {fileID: 194941452}
   - {fileID: 617561187}
+  - {fileID: 1465389975}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1230,6 +1237,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 2082951496}
   m_CeilingCheck: {fileID: 1821848248}
   m_CrouchDisableCollider: {fileID: 890837700}
+  gunpoint: {fileID: 1465389975}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1289,6 +1297,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92d48ebd9d6414d7cae1e064a1dd8c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &890837713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadffa6d93c894c5c9421dc0875a0c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall: 4
+  low: 7
 --- !u!1 &903613163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,9 +1326,10 @@ GameObject:
   - component: {fileID: 903613169}
   - component: {fileID: 903613168}
   - component: {fileID: 903613167}
-  - component: {fileID: 903613166}
-  - component: {fileID: 903613165}
+  - component: {fileID: 903613176}
+  - component: {fileID: 903613175}
   - component: {fileID: 903613164}
+  - component: {fileID: 903613177}
   m_Layer: 7
   m_Name: dax2
   m_TagString: player2
@@ -1334,75 +1357,6 @@ MonoBehaviour:
     m_Bits: 64
   attackDamage: 40
   attacrate: 2
---- !u!114 &903613165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903613163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c83b19bc007578c4bb5a6514e5996eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controler: {fileID: 903613166}
-  animator: {fileID: 903613168}
-  rigidBody: {fileID: 903613171}
-  runSpeed: 40
-  jump: 0
---- !u!114 &903613166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903613163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482019ca665d5647be57cbafd371017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.133
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  m_GroundCheck: {fileID: 186770160}
-  m_CeilingCheck: {fileID: 629240244}
-  m_CrouchDisableCollider: {fileID: 903613169}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 903613165}
-        m_TargetAssemblyTypeName: playermove2, Assembly-CSharp
-        m_MethodName: OnLanding2
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 903613165}
-        m_TargetAssemblyTypeName: playermove2, Assembly-CSharp
-        m_MethodName: Oncrouchung2
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &903613167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1425,7 +1379,7 @@ Animator:
   m_GameObject: {fileID: 903613163}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d937c6144883cef4481ae94ea47fac2a, type: 2}
+  m_Controller: {fileID: 9100000, guid: e55d5b498c44e48cf96835b9d62116f0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1611,8 +1565,124 @@ Transform:
   - {fileID: 817359600}
   - {fileID: 1360020369}
   - {fileID: 1593780787}
+  - {fileID: 998970309}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903613175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903613163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83b19bc007578c4bb5a6514e5996eec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controler: {fileID: 903613176}
+  animator: {fileID: 903613168}
+  rigidBody: {fileID: 903613171}
+  runSpeed: 40
+  jump: 0
+--- !u!114 &903613176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903613163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e482019ca665d5647be57cbafd371017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 700
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.133
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  m_GroundCheck: {fileID: 186770160}
+  m_CeilingCheck: {fileID: 629240244}
+  m_CrouchDisableCollider: {fileID: 903613169}
+  gunpoint: {fileID: 998970309}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 903613175}
+        m_TargetAssemblyTypeName: playermove2, Assembly-CSharp
+        m_MethodName: OnLanding2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 903613175}
+        m_TargetAssemblyTypeName: playermove2, Assembly-CSharp
+        m_MethodName: Oncrouchung2
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &903613177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903613163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3426ce4fb22645c39d18a55d72a5fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall: 4
+  low: 7
+--- !u!1 &998970308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 998970309}
+  m_Layer: 7
+  m_Name: gunpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &998970309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 998970308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 903613173}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1144986806
 GameObject:
@@ -1760,6 +1830,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 838906763}
   m_CeilingCheck: {fileID: 1642718548}
   m_CrouchDisableCollider: {fileID: 1144986809}
+  gunpoint: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1920,7 +1991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83b19bc007578c4bb5a6514e5996eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controler: {fileID: 1144986813}
+  controler: {fileID: 0}
   animator: {fileID: 1144986808}
   rigidBody: {fileID: 1144986814}
   runSpeed: 40
@@ -2138,6 +2209,68 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1371195922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1371195923}
+  m_Layer: 6
+  m_Name: gunfire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1371195923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371195922}
+  m_LocalRotation: {x: 0, y: 0, z: 0.2037272, w: 0.97902775}
+  m_LocalPosition: {x: 1.14, y: 0.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1577839603}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 23.51}
+--- !u!1 &1465389974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1465389975}
+  m_Layer: 6
+  m_Name: gunpoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1465389975
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465389974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 890837699}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1531211115
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2383,8 @@ GameObject:
   - component: {fileID: 1577839597}
   - component: {fileID: 1577839604}
   - component: {fileID: 1577839605}
+  - component: {fileID: 1577839606}
+  - component: {fileID: 1577839607}
   m_Layer: 6
   m_Name: koen
   m_TagString: player1
@@ -2267,7 +2402,7 @@ Animator:
   m_GameObject: {fileID: 1577839595}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5307d9141443243e2ba2d86531b41d52, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2316,6 +2451,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1851116934}
   m_CeilingCheck: {fileID: 1164722899}
   m_CrouchDisableCollider: {fileID: 1577839600}
+  gunpoint: {fileID: 1371195923}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -2382,7 +2518,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1577839595}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5c72e2d2ebb22f4fb93327352798250, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2427,7 +2563,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 1577839595}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b5c72e2d2ebb22f4fb93327352798250, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2521,6 +2657,7 @@ Transform:
   - {fileID: 1164722899}
   - {fileID: 1364659567}
   - {fileID: 2103814697}
+  - {fileID: 1371195923}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2556,6 +2693,34 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage2: 40
   attacrate: 2
+--- !u!114 &1577839606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577839595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f53c1ea73cdda44429e9976d0131d891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firepoint: {fileID: 1371195923}
+  bulletPRefab: {fileID: 8478356297627636499, guid: e3878dd389aac4f41a64233342ac6c0e, type: 3}
+--- !u!114 &1577839607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577839595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadffa6d93c894c5c9421dc0875a0c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall: 4
+  low: 7
 --- !u!1 &1593780786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2603,7 +2768,7 @@ MonoBehaviour:
   Boom: {fileID: 4492199301956469946, guid: daa42a5b98ebe4034b072b1d3bc44bab, type: 3}
   attacktime: 0.5
   animator: {fileID: 903613168}
-  move: {fileID: 903613165}
+  move: {fileID: 0}
 --- !u!1 &1642718547
 GameObject:
   m_ObjectHideFlags: 0
