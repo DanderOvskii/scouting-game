@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playermovement : MonoBehaviour
+public class PlayermovementKoen1 : MonoBehaviour
 {
-    public CharacterController2Ddax1 controler;
+    public CharacterController2Dkoen1 controler;
     public Animator animator;
     public  Rigidbody2D rigidBody; 
 
@@ -12,9 +12,9 @@ public class playermovement : MonoBehaviour
     
    public bool jump = false;
     bool crouch = false;
-  
 
-    
+
+
 
 
 
@@ -50,7 +50,7 @@ public class playermovement : MonoBehaviour
 
     }
 
-    public void OnLanding () 
+    public void OnLandingkoen1 () 
     {
         animator.SetBool("IsJumping", false);
         rigidBody.gravityScale = 3;
@@ -61,7 +61,7 @@ public class playermovement : MonoBehaviour
         Debug.Log("boeia");
     }
 
-    public void Oncrouchung (bool ischouching)
+    public void Oncrouchungkoen1 (bool ischouching)
 
     {
         animator.SetBool("iscrouching",ischouching);

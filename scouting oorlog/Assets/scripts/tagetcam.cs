@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Camera))]
-public class tagetcam : MonoBehaviour
+public class Tagetcam : MonoBehaviour
 {
    public List<Transform> targets;
    public Vector3 offset;

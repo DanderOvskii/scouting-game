@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class CharacterController2D : MonoBehaviour
+public class CharacterController2Dkoen1 : MonoBehaviour
 {
 	[SerializeField] private float m_JumpForce = 400f;                          // Amount of force added when the player jumps.
 	[Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;          // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -12,6 +12,7 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 
+
 	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
@@ -21,7 +22,7 @@ public class CharacterController2D : MonoBehaviour
 	public Transform gunpoint;
 
 	[Header("Events")]
-	[Space]
+    [Space]
 
 	public UnityEvent OnLandEvent;
 
@@ -30,6 +31,8 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
+	public bool doeblejump;
+	public int jumpcount;
 
 	private void Awake()
 	{
@@ -131,6 +134,13 @@ public class CharacterController2D : MonoBehaviour
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+			doeblejump = true;
+			
+			
+		}else if(doeblejump == true && jumpcount == 2)
+        {
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce*2));
+			jumpcount++;
 		}
 	}
 

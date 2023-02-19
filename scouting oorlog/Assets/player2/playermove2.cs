@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playermove2 : MonoBehaviour
 {
-    public CharacterController2D controler;
+    public CharacterController2Ddax2 controler;
     public Animator animator;
     public Rigidbody2D rigidBody;
 
@@ -31,6 +31,8 @@ public class playermove2 : MonoBehaviour
             jump = true;
             
             animator.SetBool("IsJumping", true);
+            controler.doeblejump = true;
+            controler.jumpcount++;
 
         }
 
@@ -58,7 +60,9 @@ public class playermove2 : MonoBehaviour
         animator.SetBool("IsJumping", false);
         rigidBody.gravityScale = 3;
         jump = false;
-        
+        controler.jumpcount = 0;
+        controler.doeblejump = false;
+
 
     }
 

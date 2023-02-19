@@ -336,7 +336,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &110845381
 Rigidbody2D:
@@ -716,16 +716,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
+  - {fileID: 624939846}
   - {fileID: 890837699}
   - {fileID: 903613173}
   - {fileID: 1577839603}
-  offset: {x: 0, y: 12, z: -50}
-  velocity: {x: 0, y: 0, z: 0}
-  smoothtime: 2
+  offset: {x: 0, y: 10, z: -45}
+  smoothtime: 0.5
   minZoom: 40
   maxZoom: 10
   zoomlimiter: 50
-  cam: {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,9 +741,7 @@ MonoBehaviour:
   - {fileID: 110845379}
   parallaxScales:
   - 10
-  smoot: 2
-  cam: {fileID: 0}
-  previousCamPos: {x: 0, y: 0, z: 0}
+  smoot: 4
 --- !u!1 &617561186
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +871,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &629240243
 GameObject:
@@ -983,10 +980,10 @@ GameObject:
   - component: {fileID: 890837702}
   - component: {fileID: 890837700}
   - component: {fileID: 890837707}
-  - component: {fileID: 890837712}
-  - component: {fileID: 890837710}
-  - component: {fileID: 890837708}
+  - component: {fileID: 890837715}
   - component: {fileID: 890837711}
+  - component: {fileID: 890837714}
+  - component: {fileID: 890837708}
   - component: {fileID: 890837713}
   m_Layer: 6
   m_Name: dax1
@@ -1215,7 +1212,50 @@ MonoBehaviour:
     m_Bits: 128
   attackDamage2: 40
   attacrate: 3
---- !u!114 &890837710
+--- !u!114 &890837711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3278c98879a22d64aa1f15bfba3046ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controler: {fileID: 890837715}
+  animator: {fileID: 890837707}
+  rigidBody: {fileID: 890837697}
+  runSpeed: 40
+  jump: 0
+--- !u!114 &890837713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cadffa6d93c894c5c9421dc0875a0c07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall: 4
+  low: 7
+--- !u!114 &890837714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 890837696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d48ebd9d6414d7cae1e064a1dd8c3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &890837715
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1268,49 +1308,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &890837711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890837696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278c98879a22d64aa1f15bfba3046ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controler: {fileID: 890837710}
-  animator: {fileID: 890837707}
-  rigidBody: {fileID: 890837697}
-  runSpeed: 40
-  jump: 0
---- !u!114 &890837712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890837696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92d48ebd9d6414d7cae1e064a1dd8c3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &890837713
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890837696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cadffa6d93c894c5c9421dc0875a0c07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fall: 4
-  low: 7
+  doeblejump: 0
+  jumpcount: 0
 --- !u!1 &903613163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,9 +1324,9 @@ GameObject:
   - component: {fileID: 903613170}
   - component: {fileID: 903613169}
   - component: {fileID: 903613168}
-  - component: {fileID: 903613167}
-  - component: {fileID: 903613176}
+  - component: {fileID: 903613178}
   - component: {fileID: 903613175}
+  - component: {fileID: 903613167}
   - component: {fileID: 903613164}
   - component: {fileID: 903613177}
   m_Layer: 7
@@ -1581,12 +1580,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c83b19bc007578c4bb5a6514e5996eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controler: {fileID: 903613176}
+  controler: {fileID: 903613178}
   animator: {fileID: 903613168}
   rigidBody: {fileID: 903613171}
   runSpeed: 40
   jump: 0
---- !u!114 &903613176
+--- !u!114 &903613177
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1595,7 +1594,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 903613163}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482019ca665d5647be57cbafd371017, type: 3}
+  m_Script: {fileID: 11500000, guid: e3426ce4fb22645c39d18a55d72a5fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fall: 4
+  low: 7
+--- !u!114 &903613178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903613163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ef506c6aaa14e0eb461f2a4f16bec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 700
@@ -1639,20 +1652,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &903613177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 903613163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3426ce4fb22645c39d18a55d72a5fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fall: 4
-  low: 7
+  doeblejump: 0
+  jumpcount: 0
 --- !u!1 &998970308
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,6 +1862,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  doeblejump: 0
+  jumpcount: 0
 --- !u!50 &1144986814
 Rigidbody2D:
   serializedVersion: 4
@@ -1957,7 +1960,7 @@ Transform:
   - {fileID: 433324895}
   - {fileID: 509261516}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1144986818
 MonoBehaviour:
@@ -2363,7 +2366,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 39.356, y: -30.561, z: -8.794}
 --- !u!1 &1577839595
 GameObject:
@@ -2375,12 +2378,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1577839603}
   - component: {fileID: 1577839602}
-  - component: {fileID: 1577839596}
   - component: {fileID: 1577839601}
   - component: {fileID: 1577839600}
   - component: {fileID: 1577839599}
-  - component: {fileID: 1577839598}
-  - component: {fileID: 1577839597}
+  - component: {fileID: 1577839596}
+  - component: {fileID: 1577839609}
+  - component: {fileID: 1577839608}
   - component: {fileID: 1577839604}
   - component: {fileID: 1577839605}
   - component: {fileID: 1577839606}
@@ -2412,76 +2415,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1577839597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577839595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3278c98879a22d64aa1f15bfba3046ed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controler: {fileID: 1577839598}
-  animator: {fileID: 1577839596}
-  rigidBody: {fileID: 1577839599}
-  runSpeed: 40
-  jump: 0
---- !u!114 &1577839598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1577839595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e482019ca665d5647be57cbafd371017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_JumpForce: 700
-  m_CrouchSpeed: 0.36
-  m_MovementSmoothing: 0.133
-  m_AirControl: 1
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  m_GroundCheck: {fileID: 1851116934}
-  m_CeilingCheck: {fileID: 1164722899}
-  m_CrouchDisableCollider: {fileID: 1577839600}
-  gunpoint: {fileID: 1371195923}
-  OnLandEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1577839597}
-        m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-        m_MethodName: OnLanding
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1577839597}
-        m_TargetAssemblyTypeName: playermovement, Assembly-CSharp
-        m_MethodName: Oncrouchung
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!50 &1577839599
 Rigidbody2D:
   serializedVersion: 4
@@ -2659,7 +2592,7 @@ Transform:
   - {fileID: 2103814697}
   - {fileID: 1371195923}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1577839604
 MonoBehaviour:
@@ -2721,6 +2654,78 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fall: 4
   low: 7
+--- !u!114 &1577839608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577839595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4192c641c5f14998a0996fc5059da98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controler: {fileID: 1577839609}
+  animator: {fileID: 1577839596}
+  rigidBody: {fileID: 1577839599}
+  runSpeed: 40
+  jump: 0
+--- !u!114 &1577839609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577839595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1765fa1f1c80e4a7b88dbf70a747733c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_JumpForce: 700
+  m_CrouchSpeed: 0.36
+  m_MovementSmoothing: 0.133
+  m_AirControl: 1
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  m_GroundCheck: {fileID: 1851116934}
+  m_CeilingCheck: {fileID: 1164722899}
+  m_CrouchDisableCollider: {fileID: 1577839600}
+  gunpoint: {fileID: 1371195923}
+  OnLandEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1577839608}
+        m_TargetAssemblyTypeName: PlayermovementKoen1, Assembly-CSharp
+        m_MethodName: OnLandingkoen1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnCrouchEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1577839608}
+        m_TargetAssemblyTypeName: PlayermovementKoen1, Assembly-CSharp
+        m_MethodName: Oncrouchungkoen1
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  doeblejump: 0
+  jumpcount: 0
 --- !u!1 &1593780786
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,7 +2993,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1808840680
 MonoBehaviour:
@@ -3058,7 +3063,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851116933}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.928, z: 0}
+  m_LocalPosition: {x: 0, y: -0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
