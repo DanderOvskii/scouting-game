@@ -45,6 +45,15 @@ public class CharacterController2Ddax2 : MonoBehaviour
 			OnCrouchEvent = new BoolEvent();
 	}
 
+	void OnDrawGizmosSelected()
+	{
+		if (m_GroundCheck == null)
+		{
+			return;
+		}
+		Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
+    }
+
 	private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;

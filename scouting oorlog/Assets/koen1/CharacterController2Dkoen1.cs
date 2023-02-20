@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Events;
 
 public class CharacterController2Dkoen1 : MonoBehaviour
@@ -12,9 +14,8 @@ public class CharacterController2Dkoen1 : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 
-
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
+    const float k_GroundedRadius = 0.05f; // Radius of the overlap circle to determine if grounded
+    private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
@@ -22,7 +23,7 @@ public class CharacterController2Dkoen1 : MonoBehaviour
 	public Transform gunpoint;
 
 	[Header("Events")]
-    [Space]
+	[Space]
 
 	public UnityEvent OnLandEvent;
 
@@ -36,7 +37,7 @@ public class CharacterController2Dkoen1 : MonoBehaviour
 
 	private void Awake()
 	{
-		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -44,6 +45,16 @@ public class CharacterController2Dkoen1 : MonoBehaviour
 		if (OnCrouchEvent == null)
 			OnCrouchEvent = new BoolEvent();
 	}
+
+	void OnDrawGizmosSelected()
+    {
+		if (m_GroundCheck == null)
+		{
+			return;
+		}
+		Gizmos.DrawWireSphere(m_GroundCheck.position, k_GroundedRadius);
+	}
+
 
 	private void FixedUpdate()
 	{
@@ -134,12 +145,10 @@ public class CharacterController2Dkoen1 : MonoBehaviour
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
-			doeblejump = true;
-			
-			
-		}else if(doeblejump == true && jumpcount == 2)
-        {
-			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce*2));
+		}
+		else if (doeblejump == true && jumpcount == 2)
+		{
+			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce * 2));
 			jumpcount++;
 		}
 	}
@@ -155,6 +164,5 @@ public class CharacterController2Dkoen1 : MonoBehaviour
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
-
 	}
 }
