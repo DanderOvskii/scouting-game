@@ -12,6 +12,7 @@ public class PlayermovementKoen1 : MonoBehaviour
     
    public bool jump = false;
     bool crouch = false;
+    
 
 
 
@@ -50,15 +51,16 @@ public class PlayermovementKoen1 : MonoBehaviour
 
     }
 
+
     public void OnLandingkoen1 () 
     {
+       
         animator.SetBool("IsJumping", false);
         rigidBody.gravityScale = 3;
         jump = false;
         controler.jumpcount = 0;
         controler.doeblejump = false;
        
-        Debug.Log("boeia");
     }
 
     public void Oncrouchungkoen1 (bool ischouching)

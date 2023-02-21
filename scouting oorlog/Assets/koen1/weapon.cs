@@ -14,6 +14,7 @@ public class weapon : MonoBehaviour
         {
             shoot();
         }
+        Debug.Log("hallo wereld!");
     }
 
     void shoot()

@@ -7,6 +7,7 @@ public class HP : MonoBehaviour
 
     public int maxHeath = 100;
     private int currentHealth;
+    public GameObject player;
     [SerializeField] private heathbarscript hpbar;
     // Start is called before the first frame update
     void Start()
@@ -30,5 +31,6 @@ public class HP : MonoBehaviour
     {
         Debug.Log("player1 dood");
         this.enabled = false;
+        player.SetActive(false);
     }
 }
