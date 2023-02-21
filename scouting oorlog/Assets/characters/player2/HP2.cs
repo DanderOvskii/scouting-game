@@ -8,7 +8,7 @@ public class HP2 : MonoBehaviour
     public int maxHeath = 100;
     private int currentHealth2;
     public GameObject player;
-    [SerializeField] private heathbarscript hpbar;
+    [SerializeField] private heathbarscript2 hpbar;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +25,14 @@ public class HP2 : MonoBehaviour
         if (currentHealth2 <= 0)
         {
             Die();
+            
         }
+    }
+
+    public void hpplus2(int plus2)
+    {
+        currentHealth2 += plus2;
+        hpbar.helthbarUpdate(maxHeath, currentHealth2);
     }
 
     void Die()

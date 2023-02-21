@@ -27,6 +27,12 @@ public class HP : MonoBehaviour
         }
     }
 
+    public void hpplus(int plus)
+    {
+        currentHealth += plus;
+        hpbar.helthbarUpdate(maxHeath, currentHealth);
+    }
+
     void Die()
     {
         Debug.Log("player1 dood");

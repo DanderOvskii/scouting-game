@@ -265,7 +265,7 @@ GameObject:
   - component: {fileID: 56918313}
   - component: {fileID: 56918312}
   m_Layer: 0
-  m_Name: text
+  m_Name: text2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 100
   player: {fileID: 890837696}
-  hpbar: {fileID: 1270122275}
+  hpbar: {fileID: 0}
 --- !u!1 &375851765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1167,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heathbarsprite: {fileID: 669952275}
+  TextLogAmount: {fileID: 1430999941}
 --- !u!1 &669952273
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,7 +1331,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &890837697
 Rigidbody2D:
   serializedVersion: 4
@@ -1547,10 +1548,10 @@ MonoBehaviour:
   attackPoint: {fileID: 1757648951}
   attackRange: 1.24
   playerLayers:
-    serializedVersion: 2
     m_Bits: 128
   attackDamage2: 40
   attacrate: 3
+  nextattack: 0
 --- !u!114 &890837711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1674,7 +1675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &903613164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,10 +1692,10 @@ MonoBehaviour:
   attackPoint: {fileID: 817359600}
   attackRange: 0.5
   playerLayers:
-    serializedVersion: 2
     m_Bits: 64
   attackDamage: 40
   attacrate: 2
+  nextattack: 0
 --- !u!114 &903613167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2317,10 +2318,10 @@ MonoBehaviour:
   attackPoint: {fileID: 433324895}
   attackRange: 1.24
   playerLayers:
-    serializedVersion: 2
     m_Bits: 64
   attackDamage: 40
   attacrate: 2
+  nextattack: 0
 --- !u!114 &1144986819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2483,7 +2484,7 @@ GameObject:
   - component: {fileID: 1270122274}
   - component: {fileID: 1270122277}
   - component: {fileID: 1270122276}
-  - component: {fileID: 1270122275}
+  - component: {fileID: 1270122278}
   m_Layer: 0
   m_Name: bg (1)
   m_TagString: Untagged
@@ -2513,19 +2514,6 @@ RectTransform:
   m_AnchoredPosition: {x: -276, y: -79}
   m_SizeDelta: {x: 289.9403, y: 48.7987}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1270122275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1270122273}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4748e9f44c105430a9cbdd80f802efb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heathbarsprite: {fileID: 1776083349}
 --- !u!114 &1270122276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2564,6 +2552,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270122273}
   m_CullTransparentMesh: 1
+--- !u!114 &1270122278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270122273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e217fcd7937445aa99a5a35b05155ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heathbarsprite: {fileID: 1776083349}
+  TextLogAmount: {fileID: 56918312}
 --- !u!1 &1285453413
 GameObject:
   m_ObjectHideFlags: 0
@@ -2724,7 +2726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHeath: 100
   player: {fileID: 903613163}
-  hpbar: {fileID: 1270122275}
+  hpbar: {fileID: 1270122278}
 --- !u!1 &1364659566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3323,8 +3325,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577839595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.759, y: 0.36, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 4.79, y: 1.23, z: 0}
+  m_LocalScale: {x: 1.601, y: 1.601, z: 1.601}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1851116934}
@@ -3363,10 +3365,10 @@ MonoBehaviour:
   attackPoint: {fileID: 2103814697}
   attackRange: 1.24
   playerLayers:
-    serializedVersion: 2
     m_Bits: 128
   attackDamage2: 40
   attacrate: 2
+  nextattack: 0
 --- !u!114 &1577839606
 MonoBehaviour:
   m_ObjectHideFlags: 0

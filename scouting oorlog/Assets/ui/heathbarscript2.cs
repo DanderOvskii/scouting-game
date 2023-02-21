@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class heathbarscript : MonoBehaviour
+public class heathbarscript2 : MonoBehaviour
 {
 
     [SerializeField] private Image heathbarsprite;
@@ -14,7 +14,7 @@ public class heathbarscript : MonoBehaviour
 
     void Start()
     {
-        TextLogAmount = GameObject.Find("text").GetComponent<TextMeshProUGUI>();
+        TextLogAmount = GameObject.Find("text2").GetComponent<TextMeshProUGUI>();
     }
 
     public void helthbarUpdate(float maxhealth, float curhealth )
