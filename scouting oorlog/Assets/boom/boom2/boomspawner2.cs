@@ -8,7 +8,7 @@ public class boomspawner2 : MonoBehaviour
     public float attacktime = 2f;
     float ready = 0f;
     public Animator animator;
-    public playermove2 move;
+    
 
 
 
@@ -21,7 +21,7 @@ public class boomspawner2 : MonoBehaviour
         if (Time.time >= ready)
         {
 
-if (Input.GetKey(KeyCode.L)&&move.jump==false)
+if (Input.GetKey(KeyCode.L))
         {
 
                 Invoke("Spawn", 1);
