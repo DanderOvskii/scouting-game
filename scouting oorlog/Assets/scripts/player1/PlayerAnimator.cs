@@ -25,15 +25,34 @@ namespace TarodevController {
         private Vector2 _movement;
         float horizontalMove = 0f;
         float runSpeed = 3f;
+        public Transform gunpoint;
+
+        
 
         void Awake() => _player = GetComponentInParent<IPlayerController>();
 
         void Update() {
 
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                Vector3 newRotation = new Vector3(0, 180, 0);
+                gunpoint.eulerAngles = newRotation;
+            }
+           if(Input.GetKeyDown(KeyCode.D))
+            {
+                Vector3 newRotation = new Vector3(0, 0, 0);
+                gunpoint.eulerAngles = newRotation;
+
+            }
+
             if (_player == null) return;
 
             // Flip the sprite
-            if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
+            if (_player.Input.X != 0)
+            {
+                transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
+                
+            }
 
             // Lean while running
             var targetRotVector = new Vector3(0, 0, -Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));

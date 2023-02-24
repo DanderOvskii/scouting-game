@@ -26,6 +26,8 @@ namespace TarodevController2 {
         float horizontalMove = 0f;
         float runSpeed = 3f;
 
+        public Transform firepoint;
+
         void Awake() => _player = GetComponentInParent<IPlayerController2>();
 
         void Update() {
@@ -33,7 +35,11 @@ namespace TarodevController2 {
             if (_player == null) return;
 
             // Flip the sprite
-            if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
+            if (_player.Input.X != 0)
+            {
+                transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
+                firepoint.transform.Rotate(0f, 180f, 0f);
+            }
 
             // Lean while running
             var targetRotVector = new Vector3(0, 0, -Mathf.Lerp(-_maxTilt, _maxTilt, Mathf.InverseLerp(-1, 1, _player.Input.X)));
