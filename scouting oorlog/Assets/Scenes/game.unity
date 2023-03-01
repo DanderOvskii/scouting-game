@@ -467,7 +467,7 @@ Transform:
   m_GameObject: {fileID: 110845377}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 27.02}
-  m_LocalScale: {x: 6.221075, y: 4.8094373, z: 1}
+  m_LocalScale: {x: 10.949715, y: 8.465091, z: 1.7601}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -26351,7 +26351,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0.109300606, y: 0, z: 0, w: 0.9940087}
-  m_LocalPosition: {x: -4, y: 12, z: -46.1}
+  m_LocalPosition: {x: 0.34, y: 12, z: -46.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26371,14 +26371,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - {fileID: 624939846}
-  - {fileID: 890837699}
-  - {fileID: 903613173}
-  - {fileID: 1577839603}
-  - {fileID: 6432609859815170371}
   - {fileID: 506531425}
+  - {fileID: 1082667304}
   offset: {x: 0, y: 10, z: -45}
-  smoothtime: 0.5
+  smoothtime: 5
   minZoom: 40
   maxZoom: 10
   zoomlimiter: 50
@@ -32956,7 +32952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 422582867}
   bulletPRefab: {fileID: 8478356297627636499, guid: e3878dd389aac4f41a64233342ac6c0e, type: 3}
-  attacktime: 10
+  attacktime: 2
   animator: {fileID: 1643709760}
 --- !u!1 &1144986806
 GameObject:

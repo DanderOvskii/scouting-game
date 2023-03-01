@@ -13,13 +13,15 @@ public class weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            
-            Invoke("shoot", 1);
-            animator.SetTrigger("supperataack");
-            ready = Time.time + 1f / attacktime;
-        }
+       
+            if (Time.time >= ready&&Input.GetKeyDown(KeyCode.E))
+            {
+
+                Invoke("shoot", 0.5f);
+                animator.SetTrigger("supperataack");
+                ready = Time.time + 1f / attacktime;
+            }
+        
         Debug.Log("hallo wereld!");
     }
 
