@@ -6,13 +6,19 @@ public class weapon : MonoBehaviour
 {
     public Transform firepoint;
     public GameObject bulletPRefab;
+    public float attacktime = 2f;
+    float ready = 0f;
+    public Animator animator;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            shoot();
+            
+            Invoke("shoot", 1);
+            animator.SetTrigger("supperataack");
+            ready = Time.time + 1f / attacktime;
         }
         Debug.Log("hallo wereld!");
     }

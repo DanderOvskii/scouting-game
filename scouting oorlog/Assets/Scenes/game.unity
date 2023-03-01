@@ -5932,7 +5932,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18297356b7fd95143bd7f1dcad5705e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anim: {fileID: 1577839596}
+  _anim: {fileID: 1643709760}
   _source: {fileID: 284505910}
   _groundMask:
     serializedVersion: 2
@@ -31951,6 +31951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HPUpgrate
       objectReference: {fileID: 0}
+    - target: {fileID: 6447617018346265007, guid: 18d505f8772784d9daacf0ca623685aa, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -32952,6 +32956,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 422582867}
   bulletPRefab: {fileID: 8478356297627636499, guid: e3878dd389aac4f41a64233342ac6c0e, type: 3}
+  attacktime: 10
+  animator: {fileID: 1643709760}
 --- !u!1 &1144986806
 GameObject:
   m_ObjectHideFlags: 0
@@ -49355,6 +49361,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firepoint: {fileID: 1371195923}
   bulletPRefab: {fileID: 8478356297627636499, guid: e3878dd389aac4f41a64233342ac6c0e, type: 3}
+  attacktime: 2
+  animator: {fileID: 0}
 --- !u!114 &1577839607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54514,7 +54522,7 @@ Animator:
   m_GameObject: {fileID: 1643709756}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5307d9141443243e2ba2d86531b41d52, type: 2}
+  m_Controller: {fileID: 9100000, guid: a45d141de231dd74492726390b891250, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -84585,7 +84593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6432609859815170368}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.59, y: 9.37, z: 0}
+  m_LocalPosition: {x: -11.24, y: 9.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
