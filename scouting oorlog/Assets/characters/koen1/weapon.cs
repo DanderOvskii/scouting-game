@@ -22,7 +22,7 @@ public class weapon : MonoBehaviour
                 ready = Time.time + 1f / attacktime;
             }
         
-        Debug.Log("hallo wereld!");
+        
     }
 
     void shoot()
