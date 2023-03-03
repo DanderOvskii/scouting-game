@@ -13,6 +13,7 @@ public class weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
        
             if (Time.time >= ready&&Input.GetKeyDown(KeyCode.E))
             {
@@ -23,6 +24,16 @@ public class weapon : MonoBehaviour
             }
         
         
+=======
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            
+            Invoke("shoot", 1);
+            animator.SetTrigger("supperataack");
+            ready = Time.time + 1f / attacktime;
+        }
+        Debug.Log("hallo wereld!");
+>>>>>>> parent of c7f62c0 (ja)
     }
 
     void shoot()
