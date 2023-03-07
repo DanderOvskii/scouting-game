@@ -9,18 +9,21 @@ public class HP2 : MonoBehaviour
     private int currentHealth2;
     public GameObject player;
     [SerializeField] private heathbarscript2 hpbar;
+    public ParticleSystem bloed;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth2 = maxHeath;
         hpbar.helthbarUpdate(maxHeath, currentHealth2);
+
     }
 
     public void Damage2(int damage2)
     {
         currentHealth2 -= damage2;
         hpbar.helthbarUpdate(maxHeath, currentHealth2);
+        bloed.Play();
 
         if (currentHealth2 <= 0)
         {
