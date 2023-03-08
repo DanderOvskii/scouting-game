@@ -164,3 +164,4 @@ MonoBehaviour:
   speed: 10
   rb: {fileID: 150365991798172093}
   BulletDamage: 5
+  RotationSpeed: 1
