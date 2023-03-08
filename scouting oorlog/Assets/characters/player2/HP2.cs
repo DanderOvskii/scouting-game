@@ -11,6 +11,7 @@ public class HP2 : MonoBehaviour
     [SerializeField] private heathbarscript2 hpbar;
     public ParticleSystem bloed;
 
+
     // Start is called before the first frame update
     void Start()
     {
