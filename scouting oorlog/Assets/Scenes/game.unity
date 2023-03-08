@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.22017324, g: 0.1853518, b: 0.18045877, a: 1}
+  m_IndirectSpecularColor: {r: 0.22015922, g: 0.18536365, b: 0.18041255, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21524,7 +21524,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackDamage: 40
-  attacrate: 2
+  attacratekort: 5
+  attacratelang: 1
+  attackcount: 4
 --- !u!1 &506575074
 GameObject:
   m_ObjectHideFlags: 0
@@ -37572,7 +37574,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackDamage2: 40
-  attacrate: 2
+  attacratekort: 0
+  attacratelang: 0
+  attackcount: 0
 --- !u!114 &890837711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37716,7 +37720,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackDamage: 30
-  attacrate: 2
+  attacratekort: 5
+  attacratelang: 1
+  attackcount: 0
 --- !u!114 &903613167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38332,8 +38338,10 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackDamage2: 40
-  attacrate: 2
+  attackDamage2: 10
+  attacratekort: 5
+  attacratelang: 1
+  attackcount: 2
 --- !u!114 &1082667303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38696,7 +38704,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   attackDamage: 40
-  attacrate: 2
+  attacratekort: 5
+  attacratelang: 1
+  attackcount: 0
 --- !u!114 &1144986819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44641,7 +44651,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackDamage: 40
-  attacrate: 2
+  attacratekort: 5
+  attacratelang: 1
+  attackcount: 0
 --- !u!114 &1444738903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54789,7 +54801,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackDamage2: 30
-  attacrate: 2
+  attacratekort: 0
+  attacratelang: 0
+  attackcount: 0
 --- !u!114 &1577839606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90064,7 +90078,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   attackDamage2: 40
-  attacrate: 2
+  attacratekort: 0
+  attacratelang: 0
+  attackcount: 0
 --- !u!1 &6432609861173285785
 GameObject:
   m_ObjectHideFlags: 0
