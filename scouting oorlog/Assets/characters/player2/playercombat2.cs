@@ -15,6 +15,7 @@ public class Playercombat2 : MonoBehaviour
     private int attacktimes;
     public int attackcount;
     float nextattack = 0f;
+   
 
 
 

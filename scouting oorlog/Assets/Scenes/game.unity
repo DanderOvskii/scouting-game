@@ -5684,6 +5684,8 @@ MonoBehaviour:
   player: {fileID: 506531422}
   hpbar: {fileID: 1270122278}
   bloed: {fileID: 351193446}
+  stun: 0
+  stuntime: 0.5
 --- !u!1 &194941451
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,6 +5779,8 @@ MonoBehaviour:
   maxHeath: 100
   player: {fileID: 890837696}
   hpbar: {fileID: 0}
+  stun: 0
+  stuntime: 2
 --- !u!1 &248872768
 GameObject:
   m_ObjectHideFlags: 0
@@ -6189,6 +6193,7 @@ MonoBehaviour:
   _maxIdleSpeed: 2
   _maxParticleFallSpeed: -40
   gunpoint: {fileID: 422582867}
+  hpdetect: {fileID: 812038517}
 --- !u!1 &326268836
 GameObject:
   m_ObjectHideFlags: 0
@@ -21320,6 +21325,7 @@ MonoBehaviour:
   _tiltSpeed: 1
   _maxIdleSpeed: 2
   _maxParticleFallSpeed: -40
+  hpdetect: {fileID: 188163413}
   firepoint: {fileID: 2066594296}
 --- !u!1 &422582866
 GameObject:
@@ -21483,6 +21489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b94ee7bfc2f04873b0fb24aa7dd7ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpdetect: {fileID: 188163413}
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.9, y: 1.34, z: 0}
@@ -21523,7 +21530,7 @@ MonoBehaviour:
   playerLayers:
     serializedVersion: 2
     m_Bits: 64
-  attackDamage: 40
+  attackDamage: 10
   attacratekort: 5
   attacratelang: 1
   attackcount: 4
@@ -26507,6 +26514,8 @@ MonoBehaviour:
   player: {fileID: 0}
   hpbar: {fileID: 0}
   bloed: {fileID: 0}
+  stun: 0
+  stuntime: 2
 --- !u!1 &512812158
 GameObject:
   m_ObjectHideFlags: 0
@@ -36505,6 +36514,8 @@ MonoBehaviour:
   maxHeath: 100
   player: {fileID: 6432609859815170368}
   hpbar: {fileID: 632782651}
+  stun: 0
+  stuntime: 2
 --- !u!61 &600101307
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37081,6 +37092,8 @@ MonoBehaviour:
   maxHeath: 100
   player: {fileID: 1082667301}
   hpbar: {fileID: 632782651}
+  stun: 0
+  stuntime: 0.5
 --- !u!61 &812038518
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38225,6 +38238,8 @@ MonoBehaviour:
   player: {fileID: 1444738901}
   hpbar: {fileID: 1270122278}
   bloed: {fileID: 0}
+  stun: 0
+  stuntime: 2
 --- !u!61 &988753350
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38354,6 +38369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfb23717f7dee14688bccda60b77b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpdetect: {fileID: 812038517}
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.9, y: 1.74, z: 0}
@@ -44015,6 +44031,7 @@ MonoBehaviour:
   _tiltSpeed: 1
   _maxIdleSpeed: 2
   _maxParticleFallSpeed: -40
+  hpdetect: {fileID: 0}
   firepoint: {fileID: 1782613695}
 --- !u!82 &1276000388
 AudioSource:
@@ -44274,6 +44291,8 @@ MonoBehaviour:
   player: {fileID: 903613163}
   hpbar: {fileID: 1270122278}
   bloed: {fileID: 0}
+  stun: 0
+  stuntime: 2
 --- !u!1 &1364659566
 GameObject:
   m_ObjectHideFlags: 0
@@ -44322,6 +44341,8 @@ MonoBehaviour:
   maxHeath: 100
   player: {fileID: 1577839595}
   hpbar: {fileID: 632782651}
+  stun: 0
+  stuntime: 2
 --- !u!61 &1364659569
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44666,6 +44687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b94ee7bfc2f04873b0fb24aa7dd7ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpdetect: {fileID: 0}
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.9, y: 1.34, z: 0}
@@ -79788,6 +79810,8 @@ MonoBehaviour:
   player: {fileID: 0}
   hpbar: {fileID: 0}
   bloed: {fileID: 0}
+  stun: 0
+  stuntime: 2
 --- !u!4 &1814403266
 Transform:
   m_ObjectHideFlags: 0
@@ -89838,7 +89862,8 @@ MonoBehaviour:
   _tiltSpeed: 30
   _maxIdleSpeed: 2
   _maxParticleFallSpeed: -40
-  gunpoint: {fileID: 0}
+  gunpoint: {fileID: 248872769}
+  hpdetect: {fileID: 600101306}
 --- !u!1 &5124300410836380245
 GameObject:
   m_ObjectHideFlags: 0
@@ -90021,6 +90046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbfb23717f7dee14688bccda60b77b9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hpdetect: {fileID: 600101306}
   _characterBounds:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 0.9, y: 1.34, z: 0}

@@ -26,6 +26,7 @@ namespace TarodevController {
         float horizontalMove = 0f;
         float runSpeed = 3f;
         public Transform gunpoint;
+        public HP hpdetect;
 
         
 
@@ -48,7 +49,7 @@ namespace TarodevController {
             if (_player == null) return;
 
             // Flip the sprite
-            if (_player.Input.X != 0)
+            if (_player.Input.X != 0&& hpdetect.stun==false)
             {
                 transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
                 

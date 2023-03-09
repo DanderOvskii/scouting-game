@@ -20,7 +20,7 @@ namespace TarodevController2
         public bool LandingThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
-
+        public HP2 hpdetect;
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
 
@@ -41,9 +41,12 @@ namespace TarodevController2
             CalculateWalk(); // Horizontal movement
             CalculateJumpApex(); // Affects fall speed, so calculate before gravity
             CalculateGravity(); // Vertical movement
+            if(hpdetect.stun == false)
+            {
             CalculateJump(); // Possibly overrides vertical
-
-            MoveCharacter(); // Actually perform the axis movement
+                MoveCharacter(); // Actually perform the axis movement
+            }
+           
         }
 
 

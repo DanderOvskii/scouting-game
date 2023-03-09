@@ -25,6 +25,7 @@ namespace TarodevController2 {
         private Vector2 _movement;
         float horizontalMove = 0f;
         float runSpeed = 3f;
+        public HP2 hpdetect;
 
         public Transform firepoint;
 
@@ -35,7 +36,7 @@ namespace TarodevController2 {
             if (_player == null) return;
 
             // Flip the sprite
-            if (_player.Input.X != 0)
+            if (_player.Input.X != 0 && hpdetect.stun==false)
             {
                 transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
                 firepoint.transform.Rotate(0f, 180f, 0f);

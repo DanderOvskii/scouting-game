@@ -20,6 +20,7 @@ namespace TarodevController
         public bool LandingThisFrame { get; private set; }
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
+        public HP hpdetect;
 
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
@@ -44,9 +45,12 @@ namespace TarodevController
             CalculateWalk(); // Horizontal movement
             CalculateJumpApex(); // Affects fall speed, so calculate before gravity
             CalculateGravity(); // Vertical movement
-            CalculateJump(); // Possibly overrides vertical
+            if (hpdetect.stun == false)
+            {
+                CalculateJump(); // Possibly overrides vertical
 
-            MoveCharacter(); // Actually perform the axis movement
+                MoveCharacter2(); // Actually perform the axis movement
+            }
         }
 
 
@@ -264,7 +268,7 @@ namespace TarodevController
         private int _freeColliderIterations = 10;
 
         // We cast our bounds before moving to avoid future collisions
-        private void MoveCharacter() {
+        private void MoveCharacter2() {
             var pos = transform.position;
             RawMovement = new Vector3(_currentHorizontalSpeed, _currentVerticalSpeed); // Used externally
             var move = RawMovement * Time.deltaTime;

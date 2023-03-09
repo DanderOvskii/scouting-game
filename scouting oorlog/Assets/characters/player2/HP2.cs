@@ -10,6 +10,8 @@ public class HP2 : MonoBehaviour
     public GameObject player;
     [SerializeField] private heathbarscript2 hpbar;
     public ParticleSystem bloed;
+    public bool stun;
+    public float stuntime = 2;
 
 
     // Start is called before the first frame update
@@ -17,6 +19,7 @@ public class HP2 : MonoBehaviour
     {
         currentHealth2 = maxHeath;
         hpbar.helthbarUpdate(maxHeath, currentHealth2);
+        stun = false;
 
     }
 
@@ -25,12 +28,20 @@ public class HP2 : MonoBehaviour
         currentHealth2 -= damage2;
         hpbar.helthbarUpdate(maxHeath, currentHealth2);
         bloed.Play();
+        stun = true;
+        StartCoroutine(KnockbackStunTime(stuntime));
 
         if (currentHealth2 <= 0)
         {
             Die();
             
         }
+    }
+
+    IEnumerator KnockbackStunTime(float cooldown)
+    {
+        yield return new WaitForSeconds(cooldown);
+        stun = false;
     }
 
     public void hpplus2(int plus2)
