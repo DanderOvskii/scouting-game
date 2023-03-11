@@ -21,6 +21,7 @@ namespace TarodevController2
         public Vector3 RawMovement { get; private set; }
         public bool Grounded => _colDown;
         public HP2 hpdetect;
+
         private Vector3 _lastPosition;
         private float _currentHorizontalSpeed, _currentVerticalSpeed;
 

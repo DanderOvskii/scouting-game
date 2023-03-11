@@ -5,6 +5,7 @@ using UnityEngine;
 public class pauze : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu = null;
+    [SerializeField] private GameObject characters = null;
 
     bool isPaused;
 
@@ -19,5 +20,11 @@ public class pauze : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
             pauseMenu.SetActive(isPaused);
         }
+    }
+
+    public void select()
+    {
+        characters.SetActive(true);
+        pauseMenu.SetActive(false);
     }
 }
