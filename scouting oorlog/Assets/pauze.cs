@@ -9,6 +9,7 @@ public class pauze : MonoBehaviour
 
     bool isPaused;
 
+
     public bool GetIsPaused() { return isPaused; }
 
     // Update is called once per frame
@@ -20,6 +21,7 @@ public class pauze : MonoBehaviour
             Time.timeScale = isPaused ? 0 : 1;
             pauseMenu.SetActive(isPaused);
         }
+
     }
 
     public void select()
