@@ -9,6 +9,7 @@ public class HP : MonoBehaviour
     private int currentHealth;
     public GameObject player;
     [SerializeField] private heathbarscript hpbar;
+    public ParticleSystem bloed;
     public bool stun;
     public float stuntime = 2;
 
@@ -24,6 +25,7 @@ public class HP : MonoBehaviour
     {
         currentHealth -= damage;
         hpbar.helthbarUpdate(maxHeath, currentHealth);
+        bloed.Play();
         stun = true;
         StartCoroutine(KnockbackStunTime(stuntime));
 
